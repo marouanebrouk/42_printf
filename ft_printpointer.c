@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexaCap.c                                       :+:      :+:    :+:   */
+/*   ft_printpointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbrouk <mbrouk@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 14:41:22 by mbrouk            #+#    #+#             */
-/*   Updated: 2024/11/27 18:11:22 by mbrouk           ###   ########.fr       */
+/*   Created: 2024/11/27 22:07:20 by mbrouk            #+#    #+#             */
+/*   Updated: 2024/11/28 11:39:36 by mbrouk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_hexaCap(unsigned int n,int count)
+int	ft_printpointer(void *ptr, int count)
 {
-    if(n >= 16)
-    {
-        count = ft_hexaCap(n/16,count);
-        count = ft_hexaCap(n%16,count);
-    }
-    else
-    {
-        count = ft_putchar("0123456789ABCDEF"[n%16],count);
-    }
-    return (count);
+	unsigned long	address;
+
+	address = (unsigned long)ptr;
+	if (ptr == 0)
+	{
+		count += write(1, "(nil)", 5);
+		return (count);
+	}
+	else
+	{
+		count = ft_putchar('0', count);
+		count = ft_putchar('x', count);
+		count = ft_pointer_to_hexa(address, count);
+	}
+	return (count);
 }

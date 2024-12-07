@@ -1,20 +1,68 @@
-#include "ft_printf.h"
 #include <stdio.h>
+#include "ft_printf.h" // Include your ft_printf header file
 
-
-
-#include <stdio.h>
-int main()
+int main(void)
 {
-    void *p;
-    int n = printf("%p",p);
-    printf("\n");
-    int m = ft_printf("%p",p);
-    // printf("\n");
-    // int m = printf("%s","%haha");
-    // printf("\n%d",n);
-    // printf("\n%d\n",m);
+    int num = 42;
+    char *str = "Test string";
+    void *ptr = &num;
+
+    // 1. Basic string
+    ft_printf("Basic string: Hello, World!\n");
+    printf("Basic string: Hello, World!\n");
+
+    // 2. Integer tests
+    ft_printf("Integer (positive): %d\n", 42);
+    printf("Integer (positive): %d\n", 42);
+    ft_printf("Integer (negative): %d\n", -42);
+    printf("Integer (negative): %d\n", -42);
+
+    // 3. Unsigned integers
+    ft_printf("Unsigned integer: %u\n", 1234567890);
+    printf("Unsigned integer: %u\n", 1234567890);
+
+    // 4. Hexadecimal (lowercase)
+    ft_printf("Hexadecimal (lowercase): %x\n", 255);
+    printf("Hexadecimal (lowercase): %x\n", 255);
+
+    // 5. Hexadecimal (uppercase)
+    ft_printf("Hexadecimal (uppercase): %X\n", 255);
+    printf("Hexadecimal (uppercase): %X\n", 255);
+
+    // 6. Pointer test
+    ft_printf("Pointer address: %p\n", ptr);
+    printf("Pointer address: %p\n", ptr);
+
+    // 7. String test
+    ft_printf("String test: %s\n", str);
+    printf("String test: %s\n", str);
+
+    // 8. Character test
+    ft_printf("Character test: %c\n", 'A');
+    printf("Character test: %c\n", 'A');
+
+    // 9. Percentage
+    ft_printf("Percentage test: %%\n");
+    printf("Percentage test: %%\n");
+
+    // 10. Edge cases
+    ft_printf("Null string: %s\n", NULL);
+    printf("Null string: %s\n", NULL);
+    ft_printf("Zero value: %d\n", 0);
+    printf("Zero value: %d\n", 0);
+    ft_printf("Max unsigned int: %u\n", (unsigned int)-1);
+    printf("Max unsigned int: %u\n", (unsigned int)-1);
+
+    // 11. Mixed formats
+    ft_printf("Mixed formats: %d, %s, %X, %p, %%\n", num, str, 255, ptr);
+    printf("Mixed formats: %d, %s, %X, %p, %%\n", num, str, 255, ptr);
+
+    return 0;
 }
+
+
+
+
 //  ft_printf("%%%");
 // printf("%%%");
 

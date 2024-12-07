@@ -6,15 +6,15 @@
 /*   By: mbrouk <mbrouk@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 14:41:31 by mbrouk            #+#    #+#             */
-/*   Updated: 2024/11/27 17:46:18 by mbrouk           ###   ########.fr       */
+/*   Updated: 2024/11/28 11:30:10 by mbrouk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char n, int count)
+int	ft_putchar(char n, int count)
 {
-    write(1, &n, 1);
-    count++;
-    return (count);
+	write(1, &n, 1);
+	count++;
+	return (count);
 }
